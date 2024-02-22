@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+In this simple and plain weather app includes fundamental concepts of js and react library and they are demonstrated pointwise below:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. React State Management: The app utilizes React's state management capabilities to store the weather data(`weather`), the input city name (`inputCity`), and update them when needed.
 
-## Available Scripts
+2. useState Hook: The `useState` hook is used to declare state variables `weather` and `inputCity` within the functional component 'WeatherApp'.
 
-In the project directory, you can run:
+3. API Data Fetching: The app fetches weather data from the OpenWeatherMap API using the Axios library. It sends an HTTP GET request to the API endpoint with specified city name to retrieve weather information.
 
-### `npm start`
+4. Asynchronous JavaScript: Asynchronous JavaScript is used to handle the asynchronous nature of data fetching operations. The `fetchWeather` function is declared as `async`, and `await` is used to asynchronously fetch weather data from the API.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+5. Conditional Rendering: The app conditionally renders weather infromation based on weather the `weather` state variable is not null. If `weather` contains data, it renders weather information; otherwise, it does not display anything.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+6. Event Handling: Event handling is used to capture user input when they type in a city name and when they click the search button. The `onChange` event on the input field updates the `inputCity` state variable, and `onClick` event on the button triggers the `handleSearch` function.
 
-### `npm test`
+7. Error Handling: Error handling is implemented to catch any errors that may occur during the API request. If an error occurs, it's logged to the console for dibugging purposes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+8. Dynamic API URL: The API URL is dynamically constructed using template literals to include the input city name and API key stored in environment variables.
 
-### `npm run build`
+9. Environment Variables: The API key is stored securely as an environment variable (`REACT_APP_WEATHER_API_KEY`) to prevent exposing it in the codebase. Environment variables are accessed using `process.env` in the js code.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+10. Metric Units: The API requests specifies the unit of measurement for temprature as Celsius(`units=metric`), ensuring consistency in displaying temprature data.
